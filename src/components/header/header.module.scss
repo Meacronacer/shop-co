@@ -1,0 +1,60 @@
+
+
+.header {
+    display: flex;
+    align-items: center;
+    padding-inline: 100px;
+    column-gap: 40px;
+    margin: 24px 0;
+
+    h1 {
+        font-family: "Integral CF", sans-serif;
+        font-weight:700;
+        font-size: 32px;
+        color: #000;
+    }
+
+    .navbar {
+        display: flex;
+        align-items:center;
+        column-gap: 24px;
+        margin-top: 5px;
+        font-family: var(--font-family), sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+
+        a {
+            width: fit-content;
+        }
+
+        :first-child {
+            display: flex;
+            align-items:center;
+            column-gap: 1.2px;
+            margin-top: 1px;
+        }
+    }
+
+    .search {
+        border-radius: 62px;
+        padding: 12px 52px;
+        width: 100%;
+        max-width: 577px;
+        height: 48px;
+        background: #f0f0f0;
+        background-image: url('../../assets/search.svg');
+        background-repeat: no-repeat;
+        background-position: 16px 12px;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .cart {
+        display: flex;
+        align-items: center;
+        column-gap: 14px;
+    }
+}

@@ -1,0 +1,83 @@
+
+
+.contentTop {
+    background: url('../../assets/main.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right 0;
+    max-width: 1440px;
+    width: 100%;
+    height: 663px;
+    display: flex;
+
+    .svgs {
+        position: relative;
+        width: 100%;
+        
+        .big {
+            position: absolute;
+            right: 81px;
+            top: 86px;
+        }
+
+        .med {
+            position: absolute;;
+            top: 297px;
+            right: 633px;
+        }
+
+    }
+
+    .info {
+        padding-left: 100px;
+        padding-top: 85px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 26px;
+
+        .line {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            width: 74px;
+            height: 0px;
+            transform: rotate(-90deg);
+        }
+
+        .title {
+            max-width: 577px;
+            font-family: var(--second-family), sans-serif;
+            font-size: 64px;
+            line-height: 100%;
+        }
+
+        .text {
+            max-width: 560px;
+            font-family: var(--font-family), sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 137%;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .brands {
+            max-width: 596px;
+            width: 100%;
+            margin-top: 28px;
+            display: flex;
+            align-items: center;
+
+
+            .name {
+                font-size: 16px;
+                line-height: 137%;
+                color: rgba(0, 0, 0, 0.6);
+                overflow: hidden;
+                 white-space: nowrap;
+            }
+
+            .quantity {
+                font-weight: 700;
+                font-size: 40px;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@import './normalize';
+@import './fonts';
+
+:root {
+  font-family: "Satoshi", sans-serif;
+  --font-family: "Satoshi", sans-serif;
+  --second-family: "Integral CF", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color:#000;
+  overflow-x: hidden;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+button {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 62px;
+  padding: 13px auto;
+  text-align: center;
+  width: 210px;
+  height: 52px;
+}
