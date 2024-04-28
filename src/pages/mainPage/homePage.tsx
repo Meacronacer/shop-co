@@ -1,4 +1,4 @@
-import root from './mainPage.module.scss'
+import root from './homePage.module.scss'
 import Header from "../../components/header/header";
 import ContentTop from '../../components/contentTop/contentTop';
 import Discount from '../../components/discount/discount';
@@ -13,7 +13,7 @@ import Footer from '../../components/footer/footer';
 const MainPage = () => {
     return (
         <>
-            <div className={root.mainPage}>
+            <div className={root.homePage}>
                 <Discount />
                 <Header/>
                 <ContentTop />

@@ -1,7 +1,7 @@
 
 
 .contentTop {
-    background: url('../../assets/main.png');
+    background: url('../../assets/main.png') #F2F0F1;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right 0;
@@ -9,6 +9,7 @@
     width: 100%;
     height: 663px;
     display: flex;
+    position: relative;
 
     .svgs {
         position: relative;
@@ -63,7 +64,11 @@
             width: 100%;
             margin-top: 28px;
             display: flex;
-            align-items: center;
+
+            .cellOne, .cellTwo {
+                display: flex;
+                align-items: center;
+            }
 
 
             .name {
@@ -78,6 +83,176 @@
                 font-weight: 700;
                 font-size: 40px;
             }
+        }
+    }
+}
+
+
+@media (max-width: 1350px) {
+
+    .contentTop {
+
+        height: 900px;
+
+
+        .info {
+            
+            .brands {
+                flex-direction: column;
+                align-items: baseline;
+
+                .cellOne {
+                    align-items: baseline;
+                    flex-direction: column;
+                }
+
+                .cellTwo {
+                    .line {
+                        display: none;
+                    }
+                }
+
+                
+            }
+        }
+
+        .svgs {
+            .med {
+                right: 730px;
+            }
+        }
+    }
+
+
+    
+}
+
+@media (max-width: 1250px) {
+    .contentTop {
+        background: url('../../assets/mainCenter.png') no-repeat;
+        background-position: center;
+        margin: auto;
+        height: 650px;
+        margin-top: 520px;
+        z-index: -1;
+
+        .info {
+            text-align: center;
+            align-items:center;
+            padding-left: 0;
+            width: 100%;
+            margin-top: -520px;
+            position: absolute;
+            background-color: #F2F0F1;
+
+            .brands {
+                flex-direction: row;
+
+                .cellOne {
+                    flex-direction: row;
+                }
+
+                .cellTwo {
+                    .line {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .svgs {
+            .big {
+                left: calc(50% + 200px);
+                top: calc(50% - 200px);
+                transform: translate(-50%, -50%);
+            }
+
+            .med {
+                left: calc(50% - 210px);
+                top: calc(50% - 20px);
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .contentTop {
+        margin-top: 300px;
+
+        .svgs {
+            .big {
+                left: calc(50% + 150px);
+                height: 54px;
+            }
+        }
+
+        .info {
+            padding-top: 27px;
+            row-gap: 10px;
+            padding-inline: 16px;
+            margin-top: -300px;
+
+            .title {
+                font-size: 36px;
+            }
+
+            .shopBtn {
+                height: 52px;
+                width: 100%;
+            }
+
+            .brands {
+                justify-content: center;
+                align-items:center;
+
+                .quantity {
+                    font-size: 24px;
+                }
+
+                .name {
+                    font-size: 12px;
+                }
+
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    
+    .contentTop {
+        height: 663px;
+        margin-top: 400px;
+
+        .info {
+            padding-bottom: 30px;
+            margin-top: -400px;
+
+            .brands {
+                margin-top: 19px;
+
+                flex-direction: column;
+
+                
+                .cellTwo {
+                    padding-top: 12px;
+                    .line {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 380px) {
+    
+    .contentTop {
+        .info {
+            padding-bottom: 0px;
         }
     }
 }

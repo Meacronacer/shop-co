@@ -2,16 +2,24 @@
 interface props {
     top?: string
     bottom?: string
+    width?: string
+    current?: string
 }
 
-const Line: React.FC<props> = ({top = '0px', bottom = '0px'}) => {
+const Line: React.FC<props> = ({
+    top = '0px',
+    bottom = '0px',
+    width = '90%',
+    current = '1px solid rgba(0, 0, 0, 0.1)'
+}) => {
     return (
         <div style={{
-            border: '1px solid rgba(0, 0, 0, 0.1)',
+            border: current,
             maxWidth: '1240px',
             margin: `${top} auto ${bottom} auto`,
-            width: '100%',
-            height: '0px;',
+            width: width,
+            height: '0px',
+            paddingInline: '10px'
         }}>
 
         </div>

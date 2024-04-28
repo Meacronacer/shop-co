@@ -7,14 +7,25 @@
     column-gap: 40px;
     margin: 24px 0;
 
+    .title {
+        display: flex;
+        align-items:center;
+        column-gap:20px;
+
+        .mobileMenu {
+            margin-top: 7px;
+        }
+    }
+
     h1 {
-        font-family: "Integral CF", sans-serif;
+        font-family: var(--second-family), sans-serif;
         font-weight:700;
         font-size: 32px;
         color: #000;
     }
 
     .navbar {
+        width: 320px;
         display: flex;
         align-items:center;
         column-gap: 24px;
@@ -56,5 +67,23 @@
         display: flex;
         align-items: center;
         column-gap: 14px;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .header {
+        justify-content: space-around;
+        padding-inline: 10px;
+    }
+}
+
+@media (max-width: 660px) {
+    .header {
+        margin: 10px 0;
+
+        .cart {
+            margin-top: 7px;
+        }
     }
 }

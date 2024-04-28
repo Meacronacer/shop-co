@@ -1,0 +1,37 @@
+
+
+.quantity {
+    position: relative;
+    display: flex;
+    align-items:center;
+
+    .plus, .minus {
+        position: absolute;
+        cursor: pointer;
+        padding: 0;
+        width: fit-content;
+        background: none;
+        border:none;
+        cursor: pointer;
+    }
+
+    .plus {
+        right: 20px;
+    }
+    .minus {
+        left: 20px;
+    }
+
+    .inputBox {
+        cursor:auto;
+        padding-left: 47%;
+        outline: none;
+        border-radius: 62px;
+        width: 170px;
+        height: 52px;
+        font-weight: 700;
+        font-size: 16px;
+        background: #f0f0f0;
+        border: none;
+    }
+}

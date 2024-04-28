@@ -3,7 +3,7 @@ import root from './dressStyle.module.scss'
 
 const DressStyle = () => {
     return (
-        <div className={root.main}>
+        <div className={root.dressedStyle}>
             <h1 className={root.title}>BROWSE BY DRESS STYLE</h1>
 
             <div className={root.items}>

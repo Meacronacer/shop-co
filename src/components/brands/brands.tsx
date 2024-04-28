@@ -7,13 +7,13 @@ import calvinClain from '../../assets/celvinClain.svg'
 
 const Brands = () => {
     return (
-        <div className={root.brands}>
-            <img src={versace} />
-            <img src={zara} />
-            <img src={gucci} />
-            <img src={prada} />
-            <img src={calvinClain} />
-        </div>
+        <ul className={root.brands}>
+            <li><img src={versace} /></li>
+            <li><img src={zara} /></li>
+            <li><img src={gucci} /></li>
+            <li><img src={prada} /></li>
+            <li><img src={calvinClain} /></li>
+        </ul>
     );
 }
  

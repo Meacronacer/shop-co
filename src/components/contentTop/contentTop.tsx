@@ -15,22 +15,30 @@ const ContentTop = () => {
                     designed to bring out your individuality
                     and cater to your sense of style.
                 </p>
-                <button>Shop Now</button>
+                <button className={root.shopBtn}>Shop Now</button>
 
                 <div className={root.brands}>
-                    <div>
-                        <h1 className={root.quantity}>200+</h1>
-                        <span className={root.name}>International Brands</span>
+                    <div className={root.cellOne}>
+                        <div>
+                            <h1 className={root.quantity}>200+</h1>
+                            <span className={root.name}>International Brands</span>
+                        </div>
+
+                        <div className={root.line}></div>
+                        
+                        <div>
+                            <h1 className={root.quantity}>2,000+</h1>
+                            <span className={root.name}>High-Quality Products</span>
+                        </div>
                     </div>
-                    <div className={root.line}></div>
-                    <div>
-                        <h1 className={root.quantity}>2,000+</h1>
-                        <span className={root.name}>High-Quality Products</span>
-                    </div>
-                    <div className={root.line}></div>
-                    <div>
-                        <h1 className={root.quantity}>30,000+</h1>
-                        <span className={root.name}>Happy Customers</span>
+                    
+                    <div className={root.cellTwo}>
+                        <div className={root.line}></div>
+                        
+                        <div>
+                            <h1 className={root.quantity}>30,000+</h1>
+                            <span className={root.name}>Happy Customers</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -38,7 +46,6 @@ const ContentTop = () => {
             <div className={root.svgs}>
                 <img className={root.big} src={bigVector} />
                 <img className={root.med} src={medVector} />
-
             </div>
         </div>
     );

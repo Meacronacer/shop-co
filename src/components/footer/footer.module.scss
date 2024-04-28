@@ -36,7 +36,14 @@
             padding-top: 130px;
             padding-inline: 100px;
             display: flex;
-            justify-content: space-between;
+            column-gap: 113px;
+
+            .links {
+                width: 100%;
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                justify-content: space-between;
+            }
 
             ul {
                 margin-top: 10px;
@@ -82,4 +89,95 @@
         }
     }
 
+}
+
+
+@media (max-width: 1150px) {
+    .footer {
+        height: 560px;
+        .inner {
+            .shop {
+                flex-direction: column;
+                padding-inline: 50px;
+
+                .info {
+                    max-width: 100%;
+                    flex-direction: row;
+                    margin-bottom: 20px;
+
+                    .title {
+                        margin-bottom: 10px;
+                    }
+
+                    .description {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        height: 800px;
+        .inner {
+            .payments {
+                flex-direction: column;
+                row-gap: 10px;
+                
+                .svgs {
+                    margin-left: 0;
+                    justify-content: center;
+                }
+
+                .title {
+                    text-align: center;
+                }
+            }
+
+
+            .shop {
+                padding-inline: 25px;
+
+                .links {
+                    grid-template-columns: repeat(2, 1fr);
+                    row-gap: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 700px) {
+    .footer {
+        height: 900px;
+        .inner {
+            .shop {
+                padding-top: 189px;
+            }
+        }
+    }
+}
+
+@media (max-width: 590px) {
+    .footer {
+        height: 970px;
+        .inner {
+            .shop {
+                padding-top: 210px;
+            }
+        }
+    }
+}
+
+@media (max-width: 445px) {
+    .footer {
+        .inner {
+            .shop {
+                padding-top: 240px;
+            }
+        }
+    }
 }

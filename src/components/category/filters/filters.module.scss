@@ -1,0 +1,139 @@
+
+
+.filters {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px 24px;
+    max-width: 295px;
+    width: 100%;
+    height: 1220px;
+    margin: 0 auto;
+    transition: all 0.5s;
+
+    .title {
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .dFlex {
+        display: flex;
+        align-items:center;
+        justify-content: space-between;
+    }
+
+    .applyFilters {
+        margin: 18px auto 0 auto;
+        border-radius: 62px;
+        padding: 16px 54px;
+        width: 90%;
+        height: 48px;
+        background-color:#000;
+        color:#fff;
+        
+    }
+
+    .type {
+        font-weight: 400;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+        
+        li {
+            display: flex;
+            align-items:center;
+            justify-content: space-between;
+        }
+    }
+
+    .colors {
+        .items {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+    }
+
+    .size {
+        .btns {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 8px;
+
+            .cell {
+                display: flex;
+                column-gap: 8px;
+            }
+
+            button {
+                width: fit-content;
+                border:none;
+                background:#f0f0f0;
+                padding: 20px;
+                height: 39px;
+                font-weight: 400;
+                font-size: 14px;
+                color: rgba(0, 0, 0, 0.6);
+            }
+        }
+    }
+
+    .dressStyle {
+
+        .items {
+            margin-top: 20px;
+            font-weight: 400;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+    }
+
+    .price {
+        .slider {
+            margin-top: 28px;
+            background: #f0f0f0;
+            height: 6px;
+
+            .thumb {
+                background-color: #000;
+                height: 20px;
+                width: 20px;
+                border-radius: 50%;
+                top: -5px;
+                cursor: grab;
+
+                .values {
+                    position: relative;
+                    top: 22px;
+                    font-weight:700;
+                    font-size: 14px;
+                    left: -6px;
+                }
+            }
+
+            .track:nth-child(2) {
+                background-color: #000;
+                height: 10px;
+                border-radius:20px;
+            }
+
+            .secondSliderValue {
+                top: 20px;
+            }
+        }
+    }
+
+}
+
+
+@media (max-width: 880px) {
+    .filters {
+        max-width: 100%;
+    }
+}

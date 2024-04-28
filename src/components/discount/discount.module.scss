@@ -2,7 +2,8 @@
 
 
 .discount {
-    width: 1440px;
+    max-width: 1440px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items:center;
@@ -21,5 +22,11 @@
         font-weight: 500;
         text-decoration: underline;
         text-decoration-skip-ink: none;
+    }
+}
+
+@media (max-width: 660px) {
+    .discount {
+        font-size: 12px;
     }
 }
