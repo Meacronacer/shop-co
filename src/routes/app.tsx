@@ -1,18 +1,18 @@
-import { Routes, Route } from 'react-router-dom'
-import MainPage from '../pages/mainPage/homePage';
-import ProductDetailPage from '../pages/productDetailPage/productDetailPage';
-import CategoryPage from '../pages/categoryPage/categoryPage';
-import CartPage from '../pages/cartPage/cartPage';
+import { Routes, Route } from "react-router-dom";
+import ProductDetailPage from "../pages/productDetailPage";
+import CategoryPage from "../pages/categoryPage";
+import CartPage from "../pages/cartPage";
+import HomePage from "../pages/homePage";
 
 const App = () => {
-    return (
-        <Routes>
-            <Route path='/' element={<MainPage />} />
-            <Route path='/product-detail' element={<ProductDetailPage />} />
-            <Route path='/category' element={<CategoryPage />} />
-            <Route path='/cart' element={<CartPage />} />
-        </Routes>
-    );
-}
- 
+  return (
+    <Routes>
+      <Route path="/shop-co/" element={<HomePage />} />
+      <Route path="/shop-co/:productTitle" element={<ProductDetailPage />} />
+      <Route path="/shop-co/shop" element={<CategoryPage />} />
+      <Route path="/shop-co/cart" element={<CartPage />} />
+    </Routes>
+  );
+};
+
 export default App;

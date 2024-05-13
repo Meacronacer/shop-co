@@ -1,37 +1,47 @@
-
+.absolute {
+  position: absolute !important;
+  width: 126px !important;
+  height: 44px !important;
+  bottom: 0;
+  right: 0;
+}
 
 .quantity {
-    position: relative;
-    display: flex;
-    align-items:center;
+  position: relative;
+  display: flex;
+  width: 170px;
+  min-width: 120px;
+  height: 52px;
+  align-items: center;
 
-    .plus, .minus {
-        position: absolute;
-        cursor: pointer;
-        padding: 0;
-        width: fit-content;
-        background: none;
-        border:none;
-        cursor: pointer;
-    }
+  .plus,
+  .minus {
+    position: absolute;
+    cursor: pointer;
+    padding: 0;
+    width: fit-content;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 
-    .plus {
-        right: 20px;
-    }
-    .minus {
-        left: 20px;
-    }
+  .plus {
+    right: 20px;
+  }
+  .minus {
+    left: 20px;
+  }
 
-    .inputBox {
-        cursor:auto;
-        padding-left: 47%;
-        outline: none;
-        border-radius: 62px;
-        width: 170px;
-        height: 52px;
-        font-weight: 700;
-        font-size: 16px;
-        background: #f0f0f0;
-        border: none;
-    }
+  .inputBox {
+    cursor: auto;
+    padding-left: 47%;
+    outline: none;
+    border-radius: 62px;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+    font-size: 16px;
+    background: #f0f0f0;
+    border: none;
+  }
 }

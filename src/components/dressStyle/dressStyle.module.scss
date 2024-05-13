@@ -1,139 +1,153 @@
-
-
 .dressedStyle {
-    margin-top: 80px;
-    margin-inline: 100px;
-    padding-bottom: 76px;
-    border-radius: 40px;
-    background: #f0f0f0;
+  margin-top: 80px;
+  margin-inline: 100px;
+  padding-bottom: 76px;
+  border-radius: 40px;
+  background: #f0f0f0;
 
+  .title {
+    font-family: var(--second-family), sans-serif;
+    margin-top: 70px;
+    font-weight: 700;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 64px;
+  }
 
-    .title {
-        font-family: var(--second-family), sans-serif;
-        margin-top: 70px;
-        font-weight: 700;
-        font-size: 48px;
-        text-align: center;
-        margin-bottom: 64px;
+  .items {
+    padding-inline: 64px;
+    display: grid;
+    grid-auto-rows: auto auto;
+    gap: 20px;
+
+    .cell {
+      column-gap: 20px;
+      display: flex;
     }
 
-    .items {
-        padding-inline: 64px;
-        display: grid;
-        grid-auto-rows: auto auto;
-        gap: 20px;
-
-        .cell {
-            column-gap: 20px;
-            display: flex;
-        }
-
-        .name {
-            margin-top: 32px;
-            margin-left: 36px;
-            font-weight: 700;
-            font-size: 36px;
-        }
-
-        .casual, .formal, .party, .gym {
-            background-repeat: no-repeat;
-            background-size:cover;
-            object-fit: cover;
-            border-radius: 20px;
-            width: 100%;
-            height: 289px;
-        }
-
-        .casual {
-            background: url('../../assets/casual.png') #fff;
-            max-width: 407px;
-            background-position: right;
-        }
-    
-        .formal {
-            background: url('../../assets/formal.png') #fff;
-            max-width: 684px;
-            background-position: right;
-        }
-        
-        .party {
-            background: url('../../assets/party.png') #fff;
-            max-width: 684px;
-            background-position: right;
-            background-repeat: no-repeat;
-            background-color: #fff;
-        } 
-    
-        .gym {
-            background: url('../../assets/gym.png') #fff;
-            max-width: 407px;
-            background-position: right;
-            background-repeat: no-repeat;
-            background-color: #fff;
-        }
+    .name {
+      margin-top: 32px;
+      margin-left: 36px;
+      font-weight: 700;
+      font-size: 36px;
     }
+
+    .casual,
+    .formal,
+    .party,
+    .gym {
+      background-repeat: no-repeat;
+      background-size: cover;
+      object-fit: cover;
+      border-radius: 20px;
+      width: 100%;
+      height: 289px;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+
+    .casual {
+      background: url("../../assets/casual.png") #fff;
+      max-width: 407px;
+      background-position: right;
+    }
+
+    .formal {
+      background: url("../../assets/formal.png") #fff;
+      max-width: 684px;
+      background-position: right;
+    }
+
+    .party {
+      background: url("../../assets/party.png") #fff;
+      max-width: 684px;
+      background-position: right;
+      background-repeat: no-repeat;
+      background-color: #fff;
+    }
+
+    .gym {
+      background: url("../../assets/gym.png") #fff;
+      max-width: 407px;
+      background-position: right;
+      background-repeat: no-repeat;
+      background-color: #fff;
+    }
+  }
 }
 
-
 @media (max-width: 1255px) {
-    .dressedStyle {
-        margin-inline: 30px;
+  .dressedStyle {
+    margin-inline: 30px;
 
-        .items {
-            padding-inline: 30px;
+    .items {
+      padding-inline: 30px;
 
-            .name {
-                margin-top: 20px;
-                margin-left: 15px;
-            }
-        }
+      .name {
+        margin-top: 20px;
+        margin-left: 15px;
+      }
     }
+  }
 }
 
 @media (max-width: 1000px) {
-    .dressedStyle {
-        margin-inline: 30px;
-        .items {
-            .cell {
-                flex-direction: column;
-                row-gap: 20px;
-            }
+  .dressedStyle {
+    margin-inline: 30px;
+    .items {
+      .cell {
+        flex-direction: column;
+        row-gap: 20px;
+      }
 
-            .casual, .formal, .party, .gym {
-                max-width: 900px;
-                background-repeat:no-repeat;
-            }
-        }
+      .casual,
+      .formal,
+      .party,
+      .gym {
+        max-width: 900px;
+        background-repeat: no-repeat;
+      }
     }
+  }
 }
 
 @media (max-width: 580px) {
-    .dressedStyle {
-        margin-inline: 10px;
-        padding-bottom: 54px;
+  .dressedStyle {
+    margin-inline: 10px;
+    padding-bottom: 54px;
 
-        .title {
-            margin-top: 20px;
-            margin-bottom: 30px;
-        }
-
-        .items {
-            padding-inline: 10px;
-
-            .casual, .formal, .party, .gym {
-                max-width: 560px;
-                background-position: right;
-            }
-        }
+    .title {
+      margin-top: 20px;
+      margin-bottom: 30px;
     }
+
+    .items {
+      padding-inline: 10px;
+
+      .casual,
+      .formal,
+      .party,
+      .gym {
+        max-width: 560px;
+        background-position: right;
+      }
+    }
+  }
 }
 
 @media (max-width: 490px) {
-    .dressedStyle {
-        .items {
-            .casual, .formal, .party, .gym {
-                background-position: center;
-            }
-        }
+  .dressedStyle {
+    .items {
+      .casual,
+      .formal,
+      .party,
+      .gym {
+        background-position: center;
+      }
     }
+  }
 }

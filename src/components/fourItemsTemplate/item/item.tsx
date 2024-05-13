@@ -1,38 +1,100 @@
-import root from './item.module.scss'
-import tshirt from '../../../assets/tshirt.png'
-import { IoStar } from "react-icons/io5";
+import root from "./item.module.scss";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { product } from "../../../redux/slices/productsSlice";
+import { IoStar, IoStarHalfOutline, IoStarOutline } from "react-icons/io5";
 
-export const Item = ({
+interface props extends product {
+  showImage?: boolean;
+  starSize?: number;
+  fontFamily?: string;
+  fontSizeTitle?: string;
+  fontSizePrice?: string;
+  spanSize?: string;
+  width?: string;
+  height?: string;
+  rowGap?: string;
+}
+
+export const Item: React.FC<props> = React.memo(
+  ({
     showImage = true,
     starSize = 20,
-    fontFamily = 'var(--first-family)',
-    fontSizeTitle = '20px',
-    fontSizePrice = '24px',
-    spanSize = '12px',
-    width = '58px',
-    height = '28px',
-    rowGap = '9px'
-    }) => {
+    fontFamily = "var(--first-family)",
+    fontSizeTitle = "20px",
+    fontSizePrice = "24px",
+    spanSize = "14px",
+    width = "fit-content",
+    rowGap = "9px",
+    image,
+    title,
+    price,
+    priceBefore,
+    rating,
+  }) => {
+    const navigate = useNavigate();
+
+    const navgateTo = () => {
+      navigate(`/shop-co/${title}`);
+      window.scrollTo(0, 0);
+    };
+
+    const ratingHandler = (rating: number) => {
+      let halfstar = false;
+      return Array.from({ length: 5 }).map((_, index) => {
+        if (index + 1 <= rating) {
+          return <IoStar key={index} size={starSize} color="orange" />;
+        } else if (!Number.isInteger(rating) && !halfstar) {
+          halfstar = true;
+          return (
+            <IoStarHalfOutline key={index} size={starSize} color="orange" />
+          );
+        }
+
+        return <IoStarOutline key={index} size={starSize} color="orange" />;
+      });
+    };
 
     return (
-        <div style={{rowGap: rowGap}} className={root.item}>
-            {showImage && <img className={root.photo} src={tshirt} />}
-            <h4 style={{fontSize: fontSizeTitle, fontFamily: fontFamily}} className={root.name}>One Life Graphic T-shirt</h4>
-            <div className={root.rating}>
-                <IoStar size={starSize} color='orange' />
-                <IoStar size={starSize} color='orange' />
-                <IoStar size={starSize} color='orange' />
-                <IoStar size={starSize} color='orange' />
-                <IoStar size={starSize} color='orange' />
-                <span style={{fontSize: spanSize, marginLeft: '10px'}}>4.5/5</span>
-            </div>
-            <div className={root.itemPrice}>
-                <span style={{fontSize: fontSizePrice}} className={root.priceNow}>$240</span>
-                <span style={{fontSize: fontSizePrice}} className={root.priceBefore}>$260</span>
-                <div style={{fontSize: spanSize, width:width, height: height}} className={root.discount}>
-                    -20%
-                </div>
-            </div>
+      <div style={{ rowGap: rowGap }} className={root.item}>
+        {showImage && (
+          <img alt='product' className={root.photo} onClick={navgateTo} src={image} />
+        )}
+        <h4
+          onClick={navgateTo}
+          style={{ fontSize: fontSizeTitle, fontFamily: fontFamily }}
+          className={root.name}
+        >
+          {title}
+        </h4>
+        <div className={root.rating}>
+          {rating && ratingHandler(rating)}
+          <span style={{ fontSize: spanSize, marginLeft: "10px" }}>
+            {rating}/5
+          </span>
         </div>
-    )
-}
+        <div className={root.itemPrice}>
+          <span style={{ fontSize: fontSizePrice }} className={root.priceNow}>
+            ${price}
+          </span>
+          {priceBefore && (
+            <span
+              style={{ fontSize: fontSizePrice }}
+              className={root.priceBefore}
+            >
+              ${priceBefore}
+            </span>
+          )}
+          {priceBefore && (
+            <div
+              style={{ fontSize: spanSize, width: width}}
+              className={root.discount}
+            >
+              -{(((priceBefore - price) * 100) / priceBefore).toFixed(0)}%
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  },
+);

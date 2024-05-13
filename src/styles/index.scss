@@ -1,5 +1,5 @@
-@import './normalize';
-@import './fonts';
+@import "./normalize";
+@import "./fonts";
 
 :root {
   font-family: "Satoshi", sans-serif;
@@ -8,14 +8,13 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color:#000;
+  color: #000;
   overflow-x: hidden;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 button {
   background: #fff;
@@ -27,4 +26,11 @@ button {
   text-align: center;
   width: 210px;
   height: 52px;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    transform: scale(1.03);
+    filter: brightness(85%) !important;
+  }
 }
