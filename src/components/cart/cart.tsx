@@ -1,22 +1,33 @@
 import root from "./cart.module.scss";
-import { FaArrowRight } from "react-icons/fa";
-import { RiDeleteBin5Fill } from "react-icons/ri";
 import Quantity from "../common/quantity/quantity";
 import Line from "../common/Line/line";
 import NavLinks from "../common/navLinks/navLinks";
+import Info from "../info/info";
+import { FaArrowRight } from "react-icons/fa";
+import { RiDeleteBin5Fill } from "react-icons/ri";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { removeItemFromCart } from "../../redux/slices/cartSlice";
-import Info from "../info/info";
+import { useEffect, useState } from "react";
 
 const Cart = () => {
   const { cartItems, totalCost } = useAppSelector((state) => state.cart);
+  const [discountUsed, setDiscountUsed] = useState<boolean>(false);
+  const [discountError, setDiscountError] = useState<string>("");
+  const [discountInput, setDiscountInput] = useState<string>("");
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   const items = cartItems.map((item, index) => {
     return (
       <div key={item.id}>
         <div className={root.item}>
-          <img alt='product' className={root.photo} src={item.image} />
+          <img alt="product" className={root.photo} src={item.image} />
 
           <div className={root.detail}>
             <h4 className={root.name}>{item.title}</h4>
@@ -66,14 +77,23 @@ const Cart = () => {
     return (
       <Info
         title="Your cart is empty"
-        to="/category"
+        to="/shop-co/shop"
         showButton={true}
         btnText="GO TO SHOP"
       />
     );
   }
 
-  console.log(totalCost)
+  const submitPromo = () => {
+    if (discountInput.toLowerCase() === "meacro") {
+      setDiscountError("Promo code applied successfully");
+      setDiscountUsed(true);
+    } else {
+      setDiscountError("Wrong promo code please try again!");
+      setDiscountInput("");
+      setDiscountUsed(false);
+    }
+  };
 
   return (
     <div className={root.cart}>
@@ -93,7 +113,7 @@ const Cart = () => {
           <div className={root.dFlex}>
             <span className={root.greyText}>Discount (-20%)</span>
             <span style={{ color: "#f33" }} className={root.boldText}>
-              -${(totalCost * 0.2)}
+              -${discountUsed ? totalCost * 0.2 : "0"}
             </span>
           </div>
           <div className={root.dFlex}>
@@ -108,14 +128,37 @@ const Cart = () => {
               Total
             </span>
             <span style={{ fontSize: "24px" }} className={root.boldText}>
-              ${totalCost - (totalCost * 0.2) + 15}
+              $
+              {discountUsed ? totalCost - totalCost * 0.2 + 15 : totalCost + 15}
             </span>
           </div>
 
           <div style={{ columnGap: "12px" }} className={root.dFlex}>
-            <input className={root.promoCode} placeholder="Add promo code" />
-            <button className={root.blackBtn}>Apply</button>
+            <input
+              disabled={discountUsed}
+              value={discountInput}
+              onChange={(e) => setDiscountInput(e.target.value)}
+              className={root.promoCode}
+              placeholder="Add promo code"
+            />
+            <button
+              disabled={discountUsed}
+              onClick={submitPromo}
+              className={root.blackBtn}
+            >
+              Apply
+            </button>
           </div>
+
+          {discountError && (
+            <span
+              style={{
+                color: discountError.startsWith("Wrong") ? "red" : "green",
+              }}
+            >
+              {discountError}
+            </span>
+          )}
 
           <button className={`${root.blackBtn} ${root.apply}`}>
             Go to Checkout <FaArrowRight size={20} />

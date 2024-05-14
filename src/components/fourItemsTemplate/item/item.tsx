@@ -1,5 +1,6 @@
 import root from "./item.module.scss";
 import React from "react";
+import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { product } from "../../../redux/slices/productsSlice";
 import { IoStar, IoStarHalfOutline, IoStarOutline } from "react-icons/io5";
@@ -58,7 +59,15 @@ export const Item: React.FC<props> = React.memo(
     return (
       <div style={{ rowGap: rowGap }} className={root.item}>
         {showImage && (
-          <img alt='product' className={root.photo} onClick={navgateTo} src={image} />
+          <motion.img
+            alt="product"
+            initial={{ opacity: 0, y: 75 }}
+            animate={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.04 }}
+            className={root.photo}
+            onClick={navgateTo}
+            src={image}
+          />
         )}
         <h4
           onClick={navgateTo}
@@ -87,7 +96,7 @@ export const Item: React.FC<props> = React.memo(
           )}
           {priceBefore && (
             <div
-              style={{ fontSize: spanSize, width: width}}
+              style={{ fontSize: spanSize, width: width }}
               className={root.discount}
             >
               -{(((priceBefore - price) * 100) / priceBefore).toFixed(0)}%

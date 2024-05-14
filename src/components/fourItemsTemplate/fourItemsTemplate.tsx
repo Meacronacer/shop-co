@@ -19,8 +19,7 @@ const FourItemsTemplate: React.FC<props> = ({
   showButton = true,
   bottom = "0px",
 }: any) => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const products = items
     ? items.map((item: product) => <Item key={item.id} {...item} />)
@@ -32,7 +31,14 @@ const FourItemsTemplate: React.FC<props> = ({
 
       <div className={root.itemsList}>{products}</div>
 
-      {showButton && <button onClick={() => navigate('/shop-co/shop')} className={root.viewAll}>{buttonName}</button>}
+      {showButton && (
+        <button
+          onClick={() => navigate("/shop-co/shop")}
+          className={root.viewAll}
+        >
+          {buttonName}
+        </button>
+      )}
     </div>
   );
 };

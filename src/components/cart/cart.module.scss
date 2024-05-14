@@ -29,7 +29,7 @@
       padding: 20px 24px;
       width: 100%;
       max-width: 505px;
-      height: 458px;
+      height: fit-content;
       display: flex;
       flex-direction: column;
       row-gap: 20px;
@@ -37,6 +37,10 @@
       .blackBtn {
         background-color: #000;
         color: #fff;
+
+        &:hover[disabled] {
+          transform: scale(1);
+        }
       }
 
       .apply {
@@ -91,6 +95,7 @@
     .items {
       border: 1px solid rgba(0, 0, 0, 0.1);
       border-radius: 20px;
+      height: fit-content;
       padding: 20px 24px;
       max-width: 715px;
       width: 100%;

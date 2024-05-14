@@ -111,10 +111,14 @@ const ProductDetail: React.FC<props> = ({ comments, productDetailData }) => {
 
   return (
     <div className={root.productDetail}>
-      <NavLinks items={["Home", "Shop", "Men", "T-shirts"]} />
+      <NavLinks items={["Home", "Shop", "T-shirts"]} />
 
       <div className={root.product}>
-        <img alt='product' className={root.bigImage} src={productDetailData.image} />
+        <img
+          alt="product"
+          className={root.bigImage}
+          src={productDetailData.image}
+        />
 
         <div className={root.itemInfo}>
           <Item
@@ -124,8 +128,6 @@ const ProductDetail: React.FC<props> = ({ comments, productDetailData }) => {
             fontFamily="var(--second-family)"
             fontSizeTitle="39px"
             fontSizePrice="32px"
-            width="72px"
-            height="34px"
             spanSize="16px"
             rowGap="14px"
           />

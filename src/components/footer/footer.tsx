@@ -37,61 +37,93 @@ const Footer = () => {
             <ul>
               <li>COMPANY</li>
               <li>
-                <Link to='' tabIndex={-1}>About</Link>
+                <Link to="" tabIndex={-1}>
+                  About
+                </Link>
               </li>
               <li>
-                <Link to='' tabIndex={-1}>Features</Link>
+                <Link to="" tabIndex={-1}>
+                  Features
+                </Link>
               </li>
               <li>
-                <Link to='' tabIndex={-1}>Works</Link>
+                <Link to="" tabIndex={-1}>
+                  Works
+                </Link>
               </li>
               <li>
-                <Link to='' tabIndex={-1}>Career</Link>
+                <Link to="" tabIndex={-1}>
+                  Career
+                </Link>
               </li>
             </ul>
             <ul>
               <li>HELP</li>
               <li>
-                <Link to='' tabIndex={-1}>Customer Support</Link>
+                <Link to="" tabIndex={-1}>
+                  Customer Support
+                </Link>
               </li>
               <li>
-                <Link to='' tabIndex={-1}>Delivery Details</Link>
+                <Link to="" tabIndex={-1}>
+                  Delivery Details
+                </Link>
               </li>
               <li>
-                <Link to='' tabIndex={-1}>Terms & Conditions</Link>
+                <Link to="" tabIndex={-1}>
+                  Terms & Conditions
+                </Link>
               </li>
               <li>
-                <Link to='' tabIndex={-1}>Privacy Policy</Link>
+                <Link to="" tabIndex={-1}>
+                  Privacy Policy
+                </Link>
               </li>
             </ul>
             <ul>
               <li>FAQ</li>
               <li>
-                <Link to='' tabIndex={-1}>Account</Link>
+                <Link to="" tabIndex={-1}>
+                  Account
+                </Link>
               </li>
               <li>
-                <Link to='' tabIndex={-1}>Manage Deliveries</Link>
+                <Link to="" tabIndex={-1}>
+                  Manage Deliveries
+                </Link>
               </li>
               <li>
-                <Link to='' tabIndex={-1}>Orders</Link>
+                <Link to="" tabIndex={-1}>
+                  Orders
+                </Link>
               </li>
               <li>
-                <Link to='' tabIndex={-1}>Payments</Link>
+                <Link to="" tabIndex={-1}>
+                  Payments
+                </Link>
               </li>
             </ul>
             <ul>
               <li>RESOURCES</li>
               <li>
-                <Link to='' tabIndex={-1}>Free eBooks</Link>
+                <Link to="" tabIndex={-1}>
+                  Free eBooks
+                </Link>
               </li>
               <li>
-                <Link to='' tabIndex={-1}>Development Tutorial</Link>
+                <Link to="" tabIndex={-1}>
+                  Development Tutorial
+                </Link>
               </li>
               <li>
-                <Link to='' tabIndex={-1}>How to - Blog</Link>
+                <Link to="" tabIndex={-1}>
+                  How to - Blog
+                </Link>
               </li>
               <li>
-                <Link to='' tabIndex={-1}>Youtube Playlist</Link>
+                <Link to="" tabIndex={-1}>
+                  Youtube Playlist
+                </Link>
               </li>
             </ul>
           </div>

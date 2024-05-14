@@ -15,7 +15,10 @@ const ContentTop = () => {
           designed to bring out your individuality and cater to your sense of
           style.
         </p>
-        <button onClick={() => navigate("/category")} className={root.shopBtn}>
+        <button
+          onClick={() => navigate("/shop-co/shop")}
+          className={root.shopBtn}
+        >
           Shop Now
         </button>
 

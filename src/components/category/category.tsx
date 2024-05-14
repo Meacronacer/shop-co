@@ -26,13 +26,13 @@ const customStyles = {
     backgroundColor: "rgb(60, 60, 60, 0.6)",
   },
   content: {
-    height: "85vh",
+    height: "80vh",
     width: "100%",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, 56%)",
     padding: "0",
-    borderRadius: "20px",
+    borderRadius: "20px 20px 0 0",
     transition: "all 0.5s ease-in-out",
   },
 };
@@ -63,6 +63,10 @@ const Category = React.memo(() => {
   const items =
     data &&
     data?.items?.map((item: product) => <Item key={item.id} {...item} />);
+
+  const selectedStyles = productDressStylles
+    .filter((item) => dressStyles[item])
+    .map((item) => item);
 
   const laptop = useMediaQuery({ query: "(min-width: 880px)" });
   const sortPopupItems = [
@@ -115,7 +119,7 @@ const Category = React.memo(() => {
   };
 
   const afterOpenModal = () => {
-    customStyles.content.transform = "translate(-50%, -40%)";
+    customStyles.content.transform = "translate(-50%, -37%)";
     setIsOpen(true);
   };
 
@@ -126,14 +130,18 @@ const Category = React.memo(() => {
 
   return (
     <div className={root.category}>
-      <NavLinks items={["Home", "Casual"]} />
+      <NavLinks items={["Home", "Shop"]} />
 
       <div className={root.content}>
         {laptop && <Filters onClick={afterOpenModal} />}
 
         <div className={root.products}>
           <div className={root.header}>
-            <h4 className={root.title}>Casual</h4>
+            <h4 className={root.title}>
+              {[0, 4].includes(activeDressStyles?.length)
+                ? "All"
+                : selectedStyles.join(", ")}
+            </h4>
             <div ref={sortRef} className={root.sort}>
               <span>Showing 1-10 of 100 Products</span>
               <div className={root.by}>
@@ -178,7 +186,10 @@ const Category = React.memo(() => {
           )}
 
           {items?.length === 0 && !isLoading ? (
-            <Info to="/category" title="No ones product find by this request" />
+            <Info
+              to="/shop-co/shop"
+              title="No ones product find by this request"
+            />
           ) : (
             <div className={root.items}>
               {isLoading
