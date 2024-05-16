@@ -1,7 +1,7 @@
 import root from "./content.module.scss";
 import bigVector from "../../assets/bigVector.svg";
 import medVector from "../../assets/medVector.svg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ContentTop = () => {
   const navigate = useNavigate();
@@ -16,10 +16,10 @@ const ContentTop = () => {
           style.
         </p>
         <button
-          onClick={() => navigate("/shop-co/shop")}
+          onClick={() => navigate("/shop-co/shop/")}
           className={root.shopBtn}
         >
-          Shop Now
+          <Link to='/shop-co/shop/'>Shop Now</Link>
         </button>
 
         <div className={root.brands}>

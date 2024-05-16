@@ -2,6 +2,7 @@ import Modal from "react-modal";
 import { motion } from "framer-motion";
 import { fadeInVariant, ulVariant, liVariant } from "./mobileAnimationSettings";
 import { IoMdClose } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const customStyles = {
   overlay: {
@@ -15,10 +16,10 @@ const customStyles = {
     height: "100vh",
     width: "100%",
     padding: "0",
-    borderRadius: "20px 20px 0 0",
     background: "#000",
     color: "#fff",
     inset: "0",
+    border: "none"
   },
 };
 
@@ -33,11 +34,13 @@ const MobileModalMenu: React.FC<props> = ({
 }) => {
   const afterOpenModal = () => {
     customStyles.overlay.transform = "translate(0%, 0%)";
+    document.body.style.overflow = 'hidden'
     setShowMobileMenu(true);
   };
 
   const afterCloseModal = () => {
     customStyles.overlay.transform = "translate(0%, -100%)";
+    document.body.style.overflow = 'scroll'
     setShowMobileMenu(false);
   };
 
@@ -74,15 +77,16 @@ const MobileModalMenu: React.FC<props> = ({
             variants={ulVariant}
           >
             {[
-              "Shop",
-              "On Sale",
-              "New Arriwals",
-              "Brands",
-              "Cart",
-              "Profile",
+              {title: "Shop", to: '/shop-co/shop/'},
+              {title: "On Sale", to: '/shop-co/shop/'},
+              {title: "New Arriwals", to: '/shop-co/shop/'},
+              {title: "New Arriwals", to: '/shop-co/shop/'},
+              {title: "Brands", to: '/shop-co/shop/'},
+              {title: "Cart", to: '/shop-co/cart/'},
+              {title: "Profile", to: '/shop-co/'}
             ].map((item, index) => (
               <motion.li whileTap={{ scale: 0.95 }} key={index}>
-                <motion.div variants={liVariant}>{item}</motion.div>
+                <motion.div variants={liVariant}><Link to={item.to}>{item.title}</Link></motion.div>
               </motion.li>
             ))}
           </motion.ul>
