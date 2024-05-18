@@ -53,8 +53,8 @@ const ProductDetail: React.FC<props> = ({ comments, productDetailData }) => {
     <ReviewItem
       {...item}
       key={item.id}
-      itemMaxWidth="610px"
-      textMaxWidth="546px"
+      itemMaxWidth="100%"
+      textMaxWidth="100%"
       date={true}
     />
   ));
