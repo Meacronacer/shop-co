@@ -106,7 +106,7 @@ const Header = () => {
           )}
           
           {isMobile && !showSearchIcon ? null :
-            <Link className={root.title} to="/shop-co/">
+            <Link className={root.title} to="/">
               SHOP.CO
             </Link>
           }
@@ -116,7 +116,7 @@ const Header = () => {
           <nav>
             <ul className={root.navbar}>
               <li className={root.item}>
-                <Link to="/shop-co/shop">Shop</Link>
+                <Link to="/shop">Shop</Link>
               </li>
               <li className={root.item}>
                 <Link to="">On Sale</Link>
@@ -156,7 +156,7 @@ const Header = () => {
         }
           <Link
             aria-label="go to cart to seen your products"
-            to="/shop-co/cart"
+            to="/cart"
           >
           <LuShoppingCart size={24} />
             {itemsCounter > 0 && (

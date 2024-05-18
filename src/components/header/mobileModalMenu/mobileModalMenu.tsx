@@ -77,13 +77,13 @@ const MobileModalMenu: React.FC<props> = ({
             variants={ulVariant}
           >
             {[
-              {title: "Shop", to: '/shop-co/shop/'},
-              {title: "On Sale", to: '/shop-co/shop/'},
-              {title: "New Arriwals", to: '/shop-co/shop/'},
-              {title: "New Arriwals", to: '/shop-co/shop/'},
-              {title: "Brands", to: '/shop-co/shop/'},
-              {title: "Cart", to: '/shop-co/cart/'},
-              {title: "Profile", to: '/shop-co/'}
+              {title: "Shop", to: '/shop'},
+              {title: "On Sale", to: '/shop'},
+              {title: "New Arriwals", to: '/shop'},
+              {title: "Top Selling", to: '/shop'},
+              {title: "Brands", to: '/shop'},
+              {title: "Cart", to: '/cart/'},
+              {title: "Profile", to: '/'}
             ].map((item, index) => (
               <motion.li whileTap={{ scale: 0.95 }} key={index}>
                 <motion.div variants={liVariant}><Link to={item.to}>{item.title}</Link></motion.div>

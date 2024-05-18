@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import root from "./navLinks.module.scss";
 
 const nav: { [key: string]: string } = {
-  Home: "/shop-co/",
-  Shop: "/shop-co/shop/",
-  "T-shirts": "/shop/shop",
+  Home: "/",
+  Shop: "/shop",
+  "T-shirts": "/shop",
 };
 
 interface props {

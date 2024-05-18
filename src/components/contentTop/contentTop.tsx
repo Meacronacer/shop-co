@@ -16,10 +16,10 @@ const ContentTop = () => {
           style.
         </p>
         <button
-          onClick={() => navigate("/shop-co/shop/")}
+          onClick={() => navigate("/shop")}
           className={root.shopBtn}
         >
-          <Link to='/shop-co/shop/'>Shop Now</Link>
+          <Link to='/shop'>Shop Now</Link>
         </button>
 
         <div className={root.brands}>

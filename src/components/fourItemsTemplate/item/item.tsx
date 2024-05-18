@@ -36,7 +36,7 @@ export const Item: React.FC<props> = React.memo(
     const navigate = useNavigate();
 
     const navgateTo = () => {
-      navigate(`/shop-co/${title}`);
+      navigate(`/${title}`);
       window.scrollTo(0, 0);
     };
 

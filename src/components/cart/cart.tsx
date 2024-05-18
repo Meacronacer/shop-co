@@ -77,7 +77,7 @@ const Cart = () => {
     return (
       <Info
         title="Your cart is empty"
-        to="/shop-co/shop"
+        to="/shop"
         showButton={true}
         btnText="GO TO SHOP"
       />

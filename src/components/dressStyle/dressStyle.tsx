@@ -11,23 +11,23 @@ const DressStyle = () => {
       <div className={root.items}>
         <div className={root.cell}>
           <div
-            onClick={() => navigate("/shop-co/shop")}
+            onClick={() => navigate("/shop")}
             className={root.casual}
           >
             <h2 className={root.name}>Casual</h2>
           </div>
           <div
-            onClick={() => navigate("/shop-co/shop")}
+            onClick={() => navigate("/shop")}
             className={root.formal}
           >
             <h2 className={root.name}>Formal</h2>
           </div>
         </div>
         <div className={root.cell}>
-          <div onClick={() => navigate("/shop-co/shop")} className={root.party}>
+          <div onClick={() => navigate("/shop")} className={root.party}>
             <h2 className={root.name}>Party</h2>
           </div>
-          <div onClick={() => navigate("/shop-co/shop")} className={root.gym}>
+          <div onClick={() => navigate("/shop")} className={root.gym}>
             <h2 className={root.name}>Gym</h2>
           </div>
         </div>

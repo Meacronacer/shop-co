@@ -9,7 +9,7 @@ import "./styles/index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter >
+    <BrowserRouter basename="/shop-co" >
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
             <App />

@@ -33,7 +33,7 @@ const FourItemsTemplate: React.FC<props> = ({
 
       {showButton && (
         <button
-          onClick={() => navigate("/shop-co/shop")}
+          onClick={() => navigate("/shop")}
           className={root.viewAll}
         >
           {buttonName}

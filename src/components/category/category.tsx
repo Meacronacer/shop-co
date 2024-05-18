@@ -186,7 +186,7 @@ const Category = React.memo(() => {
 
           {items?.length === 0 && !isLoading ? (
             <Info
-              to="/shop-co/shop"
+              to="/shop"
               title="No ones product find by this request"
             />
           ) : (
