@@ -206,11 +206,11 @@ const Category = React.memo(() => {
             previousClassName={root.previous}
             nextClassName={root.next}
             activeClassName={root.active}
-            onPageChange={(event) => setCurrentPage(event.selected + 1)}
+            onPageChange={(event) => setCurrentPage(event?.selected + 1)}
             breakLabel="..."
             nextLabel={<span>Next &#8594;</span>}
             pageRangeDisplayed={3}
-            pageCount={data?.meta?.total_pages}
+            pageCount={data?.meta?.total_pages ? data?.meta?.total_pages : 0}
             previousLabel={<span>&#8592; Previous</span>}
             renderOnZeroPageCount={null}
           />
