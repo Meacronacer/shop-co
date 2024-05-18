@@ -107,6 +107,7 @@ const Category = React.memo(() => {
       sortBy,
       currentPage,
     });
+    setIsOpen(false)
   }, [applyFilter, currentPage, sortBy]);
 
   if (isLoading) return null;

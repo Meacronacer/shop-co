@@ -53,11 +53,11 @@ interface props {
 }
 
 const Filters: React.FC<props> = ({ laptop, isOpen, afterCloseModal }) => {
-  const [values, setValues] = useState([50, 200]);
-  const [hideColors, setHideColors] = useState(false);
-  const [hideSizes, setHideSizes] = useState(false);
-  const [hidePrice, setHidePrice] = useState(false);
-  const [hideDressStyles, setHideDressStyles] = useState(false);
+  const [values, setValues] = useState([10, 300]);
+  const [hideColors, setHideColors] = useState<boolean>(false);
+  const [hideSizes, setHideSizes] = useState<boolean>(false);
+  const [hidePrice, setHidePrice] = useState<boolean>(false);
+  const [hideDressStyles, setHideDressStyles] = useState<boolean>(false);
   const dispatch = useAppDispatch();
 
   const colors = productColors.map((item, index) => (

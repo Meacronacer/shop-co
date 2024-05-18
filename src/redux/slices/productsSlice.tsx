@@ -25,7 +25,7 @@ interface initialStateProps {
 
 const initialState: initialStateProps = {
   sortBy: "Rating DESC",
-  price: [50, 200],
+  price: [10, 300],
   types: {
     "T-shirts": false,
     Shorts: false,
