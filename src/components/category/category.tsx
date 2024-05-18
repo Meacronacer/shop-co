@@ -111,7 +111,6 @@ const Category = React.memo(() => {
 
   if (isLoading) return null;
 
-  console.log(items);
 
   const onSortPopupChange = (sortBy: string) => {
     dispatch(changeSortBy(sortBy));
