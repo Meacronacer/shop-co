@@ -23,6 +23,10 @@ const Quantity: React.FC<props> = ({
 }) => {
   const dispatch = useAppDispatch();
 
+  if (!setQuantity || cart) {
+    return null
+  }
+
   const incrementHandler = (cart: boolean) => {
     if (cart && !isNaN(id)) {
       dispatch(quantityIncrement(id));
@@ -39,13 +43,18 @@ const Quantity: React.FC<props> = ({
     }
   };
 
+
   return (
     <div
       className={`${root.quantity} ${position === "absolute" && root.absolute}`}
     >
       <button
         disabled={quantity === 1}
-        onClick={() => decrementHandler(cart)}
+        onClick={
+          cart ? () => decrementHandler(cart)
+          :
+          () => setQuantity(prev => prev - 1)
+        }
         className={root.minus}
       >
         <FaMinus size={25} />
@@ -58,7 +67,11 @@ const Quantity: React.FC<props> = ({
         value={quantity}
       />
 
-      <button className={root.plus} onClick={() => incrementHandler(true)}>
+      <button className={root.plus} onClick={
+        cart ? () => incrementHandler(cart)
+        : 
+        () => setQuantity(prev => prev + 1)
+      }>
         <FaPlus size={25} />
       </button>
     </div>
