@@ -26,6 +26,7 @@ const Header = () => {
 
   const searchRef = useRef<HTMLDivElement | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+  const dropdownRef = useRef<HTMLDivElement | null>(null)
 
   const [trigger, { data = [] }]  = useLazyGetProductByTitleQuery()
   const { itemsCounter } = useAppSelector((state) => state.cart);
@@ -37,7 +38,8 @@ const Header = () => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       if (!searchRef?.current?.contains(event.target as Node) &&
-          !inputRef?.current?.contains(event.target as Node)
+          !inputRef?.current?.contains(event.target as Node) &&
+          !dropdownRef.current?.contains(event.target as Node)
       ) {
         setShowSearchIcon(true);
       }
@@ -66,7 +68,7 @@ const Header = () => {
 
   const navigateBytitle = (title:string) => {
     setInputValue('')
-      navigate(`shop-co/${title}/`)
+    navigate(`../${title}/`)
   }
 
   const updateValue = useMemo(() =>
@@ -143,7 +145,7 @@ const Header = () => {
           value={inputValue}
             />
           {data?.length && inputValue?.length ?
-              <div className={root.dropdown}>
+              <div ref={dropdownRef} className={root.dropdown}>
                 {dropDownData}
               </div>
               : null
